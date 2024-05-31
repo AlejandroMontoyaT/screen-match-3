@@ -8,6 +8,15 @@ public class Titulo {
     private int totalDeEvaluaciones;
     private int duracionEnMinutos;
 
+    // EL CONSTRUCTOR NORMALMENTE SE COLOCA DEBAJO DE LOS ATRIBUTOS
+
+
+    public Titulo(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+    //FIN DEL CONSTRUCTOR
+
     public String getNombre() {
         return nombre;
     }
