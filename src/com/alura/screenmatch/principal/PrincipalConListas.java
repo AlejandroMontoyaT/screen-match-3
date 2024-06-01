@@ -17,6 +17,9 @@ public class PrincipalConListas {
         peliculaDeBruno.evalua(10);
         Serie lost = new Serie("Lost", 2000);
 
+        //se crea nueva variable de tipo arraylist para almacenar las peliculas y series
+        Pelicula p1 = miPelicula;
+
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(miPelicula);
         lista.add(otraPelicula);
@@ -26,9 +29,14 @@ public class PrincipalConListas {
         //se realiza una iteracion un for para que muestre toString de cada serie y pelicula
         // se realza for each para recorrer la lista
         for (Titulo item : lista) {
-            System.out.println(item);
-            Pelicula pelicula=(Pelicula) item;
-            System.out.println(pelicula.getClasificacion()); //se forza clase para ser una igual a otra se realiza un cas
+            System.out.println(item.getNombre());
+            //preguntar si el item no es de una clase mas especifica si lo es realiza el cast
+            if (item instanceof Pelicula pelicula && pelicula.getClasificacion()>2) {
+               // Pelicula pelicula = (Pelicula) item;
+                System.out.println(pelicula.getClasificacion());
+            }
+           // Pelicula pelicula=(Pelicula) item;
+           // System.out.println(pelicula.getClasificacion()); //se forza clase para ser una igual a otra se realiza un cas
         }
 
     }
