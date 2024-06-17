@@ -3,8 +3,11 @@ package com.alura.screenmatch.principal;
 import com.alura.screenmatch.modelos.Pelicula;
 import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -38,7 +41,24 @@ public class PrincipalConListas {
            // Pelicula pelicula=(Pelicula) item;
            // System.out.println(pelicula.getClasificacion()); //se forza clase para ser una igual a otra se realiza un cas
         }
+        // ordenamiento de lista de artistas ordenar por nombre
+        ArrayList<String> ListaDeArtistas = new ArrayList<>();
+        ListaDeArtistas.add("Penelope Cruz");
+        ListaDeArtistas.add("Antonio Balderas");
+        ListaDeArtistas.add("Javier Bardem");
+        //lista de artista no ordenanda por nombre
+        System.out.println(ListaDeArtistas);
+        // para el ordenamiento de lista por nombre se realiza desde el ordenamiento collection que es la liberia que nos ayuda a realizar este tipo de ordenamiento
+        //          es un metodo estatico
+        Collections.sort(ListaDeArtistas);
+        System.out.println("Lista de Artistas ordenadas" +ListaDeArtistas);
 
+        //se crea la logica de comparacion
+        Collections.sort(lista);
+        System.out.println(" Lista de titulos ordenados " + lista);
+
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+System.out.println("Lista de titulos ordenados por fecha de lanzamiento" + lista);
     }
 
 }

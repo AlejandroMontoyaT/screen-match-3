@@ -1,6 +1,6 @@
 package com.alura.screenmatch.modelos;
-
-public class Titulo {
+//               se implementa comparable para poder realizar la comparacion de titulos
+public class Titulo implements Comparable<Titulo> {
     private String nombre;
     private int fechaDeLanzamiento;
     private boolean incluidoEnElPlan;
@@ -65,5 +65,11 @@ public class Titulo {
 
     public double calculaMediaEvaluaciones(){
         return sumaDeLasEvaluaciones / totalDeEvaluaciones;
+    }
+//este se crea al realizar el comparable del titulo con otro titulo
+    @Override
+    public int compareTo(Titulo otroTitulo){
+        //se crea una comparacion de ordenamiento de nombres gracias a que string puede ordenar desde comparacion
+        return this.getNombre().compareTo(otroTitulo.getNombre());
     }
 }
