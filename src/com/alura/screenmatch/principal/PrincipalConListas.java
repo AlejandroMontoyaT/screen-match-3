@@ -5,9 +5,7 @@ import com.alura.screenmatch.modelos.Serie;
 import com.alura.screenmatch.modelos.Titulo;
 import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalConListas {
     public static void main(String[] args) {
@@ -23,7 +21,8 @@ public class PrincipalConListas {
         //se crea nueva variable de tipo arraylist para almacenar las peliculas y series
         Pelicula p1 = miPelicula;
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+    //se cambia ArrayList por List para que sea mas generico
+        List<Titulo> lista = new LinkedList<>();
         lista.add(miPelicula);
         lista.add(otraPelicula);
         lista.add(peliculaDeBruno);
